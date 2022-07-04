@@ -1,0 +1,103 @@
+<div class="appContent">
+    <h1 class="title" >Search Tweets </h1>
+    
+
+
+    <form name="frmSearch" id="frmSearch" >
+
+        <div class="form-group">
+            <label class="labelTweets">Hashtag</label>
+            <input [(ngModel)]="hashtag" [ngModelOptions]="{standalone: true}"  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="Hashtag" placeholder="Enter hashtag">
+          </div>
+
+        <div class="count" >
+        <label class="labelTweets">Number of tweets</label>
+        <select  required [(ngModel)]="count" [ngModelOptions]="{standalone: true}" id="=count" class="form-control  form-select-sm">
+        <option value="" disabled selected>Tweets numbers</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="100">100</option>
+     </select>&nbsp;
+
+     <button type="submit" class="btn btn-primary" (click)="searchTweets()">Submit</button>
+    
+    </div>  
+    
+    <table mat-table class="tweet-table table table-striped table-bordered mat-elevation-z8" [dataSource]="dataSource" [hidden]="etat">
+  
+      <ng-container matColumnDef="name" >
+          <th class="w-75 th-center" *matHeaderCellDef >Name</th>
+          <td *matCellDef="let tweet">{{tweet[0]}}</td>
+      </ng-container>
+    
+      <ng-container matColumnDef="lng">
+          <th  class="w-75 th-center" *matHeaderCellDef>LNG</th>
+          <td class="description-cell" *matCellDef="let tweet">{{tweet[2]}}</td>
+      </ng-container>
+    
+      <ng-container matColumnDef="content">
+          <th class="w-75 th-center" *matHeaderCellDef>Content</th>
+          <td class="duration-cell" *matCellDef="let tweet">{{tweet[1]}}</td>
+      </ng-container>
+      
+      <ng-container matColumnDef="timestamp" >
+          <th class="w-75 th-center" *matHeaderCellDef>timestamp</th>
+          <td class="duration-cell" *matCellDef="let tweet">{{tweet[3]}}</td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+
+  </table>
+  <mat-paginator [length]="count" [pageSize]="3"
+  [pageSizeOptions]="[3, 5, 10]" [hidden]="etat"></mat-paginator>
+    
+
+
+
+
+
+
+
+
+<!--
+<mat-table class="lessons-table mat-elevation-z8" [dataSource]="dataSource" [hidden]="etat">
+  
+    <ng-container matColumnDef="name">
+        <div *matHeaderCellDef>#</div>
+        <div *matCellDef="let lesson">{{lesson.name}}</div>
+    </ng-container>
+  
+    <ng-container matColumnDef="lng">
+        <div *matHeaderCellDef>Description</div>
+        <div class="description-cell"
+                  *matCellDef="let lesson">{{lesson.lng}}</div>
+    </ng-container>
+  
+    <ng-container matColumnDef="content">
+        <div *matHeaderCellDef>Duration</div>
+        <div class="duration-cell"
+                  *matCellDef="let lesson">{{lesson.content}}</div>
+    </ng-container>
+    
+    <ng-container matColumnDef="timestamp">
+        <div *matHeaderCellDef>Duration</div>
+        <div class="duration-cell"
+                  *matCellDef="let lesson">{{lesson.timestamp}}</div>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+    
+</mat-table>
+-->
+
+
+
+
+
+
+
+

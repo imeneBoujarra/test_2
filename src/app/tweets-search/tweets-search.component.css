@@ -1,0 +1,41 @@
+
+   
+   table {
+    width: 100%;
+    table-layout: fixed;
+    margin-top: 1%;
+  }
+  
+  .w-75{
+    max-width: 60px;
+  }
+  .form-control
+  {
+    width: 20%;
+    
+    margin-left: 5%;
+  }
+
+  .labelTweets
+   {margin-top: 20px;
+    margin-left:5%;
+    text-size-adjust: 20px;
+   }
+  .title
+  { margin-left: 6%;
+    size: 20px;
+    color: brown;
+  }
+  .appContenent 
+  {
+     border: 10mm;
+     border-radius: 6mm;
+     border-block-width: 20px;
+    border-color: rgb(0, 0, 0);
+  }
+  .btn
+  {
+    margin-left:10%;
+    margin-top: 1%;
+        
+  }
